@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./src/img/favicon.ico">
-    <title>This Website Doesn't Exist </title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/d99716b718.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./src/sass/style.scss">
-</head>
-<body>
-    <header class="header">
-        <div class="header__logo-box">
-            <img class="header__image" src="./src/img/logo.png" alt="Logo of the company TWDE">
-        </div>
-        <div class="header__additional-box">
-            <div class="header__add-box--1">
-                <div class="header__button language-btn">[Flag icon]</div>
-                <div class="header__button currency-btn">zł</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.ico" />
+    <title>This Website Doesn't Exist</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/d99716b718.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d99716b718.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/sass/style.scss" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__bg">
+          <div class="header__filter">
+            <section class="header__contact-section">
+              <div class="header__contact header__phone">
+                <a href="tel:+213755555">+21 375 55 55</a>
+              </div>
+              <div class="header__contact header__mail">
+                <a href="mailto:twde@dontwrite.com">twde@dontwrite.com</a>
+              </div>
+
+              <div class="header__contact header__support">Live chat</div>
+            </section>
+
+            <div class="header__logo">
+              <img src="./src/img/logo.png" alt="Logo of TWDE company" />
             </div>
-            <div class="header__add-box--2">
-                <div class="header__button language-btn">Konto</div>
+            <h1 class="header__h1">Where will you travel this time?</h1>
+            <div class="header__button-container">
+              <div class="header__button sign-btn">Sign in/up</div>
+              <div class="header__button currency-btn">€</div>
+              <div class="header__button header__language-container">
+                <img
+                  class="header__language-btn"
+                  src="./src/flags/pl.svg"
+                  alt="Polish flag"
+                />
+              </div>
             </div>
+          </div>
         </div>
-    </header>
-</body>
+      </header>
+
+      <section class="feature-buttons">
+        <div class="feature-buttons__background">
+          <div class="feature-buttons__h2">
+            <h2>Check out one of our offers</h2>
+          </div>
+          <div class="feature-buttons__container">
+            <!-- This div is for easier design in css -->
+            <button class="feature-buttons__button"><span></span></button>
+
+            <button class="feature-buttons__button">
+              <div class="feature-buttons__rotate-fix">
+                <span><b>LAST MINUTE</b></span>
+                <span
+                  ><i
+                    class="fa-regular fa-bookmark feature-buttons__icon"
+                    style="color: #3862b6"
+                  ></i
+                ></span>
+              </div>
+            </button>
+            <button class="feature-buttons__button">
+              <div class="feature-buttons__rotate-fix">
+                <span><b>ALL INCLUSIVE</b></span>
+                <span
+                  ><i
+                    class="fa-regular fa-bookmark feature-buttons__icon"
+                    style="color: #3862b6"
+                  ></i
+                ></span>
+              </div>
+            </button>
+            <button class="feature-buttons__button">
+              <div class="feature-buttons__rotate-fix">
+                <span><b>RESERVATION</b></span>
+                <span
+                  ><i
+                    class="fa-regular fa-bookmark feature-buttons__icon"
+                    style="color: #3862b6"
+                  ></i
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
