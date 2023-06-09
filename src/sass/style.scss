@@ -1,3 +1,7 @@
+@import "./colors";
+@import "./animations";
+@import "./components";
+
 *,
 *::before,
 *::after {
@@ -14,51 +18,203 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   position: relative;
-  background-image: url("../img/header-bg-low.jpg");
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 550px;
+  z-index: 1;
 
-  &__logo-box {
+  &__bg {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/header-bg-low.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
   }
 
-  &__image {
-    width: 150px;
+  &__filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(41, 111, 202, 0.76);
+    z-index: 3;
   }
 
-  &__additional-box {
-    position: absolute;
+  &__logo {
+    text-align: center;
+
+    img {
+      width: 300px;
+    }
+  }
+
+  &__h1 {
+    text-align: center;
+    color: $primary;
+    font-size: 2rem;
+    margin: 5rem auto;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 25px;
+    max-width: 300px;
+    @include lazyLoadingAnim2;
+  }
+
+  &__button-container {
     display: flex;
     flex-direction: column;
-    right: 10px;
-    top: 10px;
-  }
-
-  &__add-box--1 {
-    display: flex;
-  }
-
-  &__add-box--2 {
-    display: flex;
     align-items: center;
     justify-content: center;
+
+    .currency-btn {
+      transition: color 0.3s, border 0.3s;
+      &:hover {
+        color: $gold;
+        border: 3px solid $gold;
+      }
+    }
+  }
+
+  &__h1,
+  &__button {
+    @include headersStyling;
+  }
+
+  &__language-btn {
+    width: 30px;
+  }
+
+  &__language-container {
+    background-color: transparent;
   }
 
   &__button {
-    font-size: 2rem;
+    position: relative;
+    margin: 0.25rem auto;
+    width: 200px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    overflow: hidden;
+    z-index: 0;
+    transition: color 0.3s;
+    @include lazyLoadingAnim;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0px;
+      width: 100%;
+      background-color: $secondary;
+      z-index: -1;
+      transition: height 0.3s;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:hover::after {
+      height: 100%;
+    }
+  }
+
+  // Header contact section
+  &__contact-section {
+    font-size: 1.25rem;
+    justify-content: space-between;
+    background-color: $white;
+    padding: 0 2rem;
     display: flex;
-    align-items: center;
+  }
+
+  &__contact {
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+}
+
+// Feature buttons section
+.feature-buttons {
+  position: relative;
+
+  &__h2 {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    width: 100%;
+    height: 100px;
+    
+    h2 {
+      @include headersStyling;
+      margin: 0 auto;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &__background {
+    position: relative;
+    display: flex;
     justify-content: center;
-    margin: 10px;
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    height: 400px;
+    background-color: $white;
+    border-radius: 25px;
+    transform: translateY(-6%);
+    z-index: 1;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 100px auto 0 auto;
+    height: 220px;
+    width: 220px;
+    transform: rotate(45deg);
+  }
+
+  &__button {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    border: 3px solid $primary;
+    transition: border 0.3s, background-color 0.3s, color 0.3s, box-shadow .3s;
+    cursor: pointer;
+
+    div {
+      rotate: -45deg;
+    }
+
+    &:first-child {
+      visibility: hidden;
+    }
+
+    &:hover {
+      border: 3px solid $secondary;
+      background-color: $secondary-light;
+      color: $white;
+      box-shadow: 0px 0px 9px 3px black;
+    }
+
+    span {
+      display: inline-block;
+      // transform: rotate(-45deg);
+      // transform: translate(50%, 50%);
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
   }
 }
