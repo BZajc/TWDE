@@ -26,7 +26,7 @@ a {
 .header {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 600px;
   z-index: 1;
 
   &__bg {
@@ -127,6 +127,11 @@ a {
     }
   }
 
+  &__info-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
   // Header contact section
   &__contact-section {
     font-size: 1.25rem;
@@ -146,7 +151,7 @@ a {
 .feature-buttons {
   position: relative;
 
-  &__h2 {
+  &__text {
     position: absolute;
     top: 10%;
     left: 0%;
@@ -158,6 +163,13 @@ a {
       margin: 0 auto;
       background-color: $primary;
       color: $white;
+    }
+
+    p {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.25rem;
+      color: $primary;
     }
   }
 
@@ -194,6 +206,7 @@ a {
 
     div {
       rotate: -45deg;
+      font-size: 1.25rem;
     }
 
     &:first-child {
@@ -203,18 +216,24 @@ a {
     &:hover {
       border: 3px solid $secondary;
       background-color: $secondary-light;
-      color: $white;
       box-shadow: 0px 0px 9px 3px black;
+    }
+
+    &:hover .feature-buttons__icon {
+      display: block;
+    }
+
+    &:hover .feature-buttons__text {
+      display: none;
     }
 
     span {
       display: inline-block;
-      // transform: rotate(-45deg);
-      // transform: translate(50%, 50%);
     }
   }
 
   &__icon {
-    font-size: 2rem;
+    display: none;
+    font-size: 4rem;
   }
 }

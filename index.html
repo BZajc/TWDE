@@ -19,13 +19,13 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./src/sass/style.scss" />
+    <link rel="stylesheet" href="./src/sass/mediaqueries.scss" />
   </head>
 
   <body>
-    <div class="wrapper">
-      <header class="header">
-        <div class="header__bg">
-          <div class="header__filter">
+    <header class="header">
+      <div class="header__bg">
+        <div class="header__filter">
             <section class="header__contact-section">
               <div class="header__contact header__phone">
                 <a href="tel:+213755555">+21 375 55 55</a>
@@ -51,15 +51,21 @@
                   alt="Polish flag"
                 />
               </div>
+              <p class="header__info-text">
+                <i class="fa-solid fa-up-long" style="color: #e5e5e5"></i>
+              </p>
+              <p class="header__info-text">
+                You can change currency or website language by clicking here
+              </p>
             </div>
-          </div>
         </div>
       </header>
 
       <section class="feature-buttons">
         <div class="feature-buttons__background">
-          <div class="feature-buttons__h2">
+          <div class="feature-buttons__text">
             <h2>Check out one of our offers</h2>
+            <p><i class="fa-solid fa-shield-halved"></i> Safe payment | <i class="fa-solid fa-plane-departure"></i> Flight booking guarantee</p>
           </div>
           <div class="feature-buttons__container">
             <!-- This div is for easier design in css -->
@@ -67,29 +73,23 @@
 
             <button class="feature-buttons__button">
               <div class="feature-buttons__rotate-fix">
-                <span><b>LAST MINUTE</b></span>
+                <span class="feature-buttons__text"><b>LAST MINUTE</b></span>
                 <span
-                  ><i
-                    class="fa-regular fa-bookmark feature-buttons__icon"
-                    style="color: #3862b6"
-                  ></i
+                  ><i class="fa-solid fa-stopwatch feature-buttons__icon" style="color: #3862b6"></i
                 ></span>
               </div>
             </button>
             <button class="feature-buttons__button">
               <div class="feature-buttons__rotate-fix">
-                <span><b>ALL INCLUSIVE</b></span>
+                <span class="feature-buttons__text"><b>ALL INCLUSIVE</b></span>
                 <span
-                  ><i
-                    class="fa-regular fa-bookmark feature-buttons__icon"
-                    style="color: #3862b6"
-                  ></i
+                  ><i class="fa-solid fa-wine-glass feature-buttons__icon" style="color: #3862b6"></i
                 ></span>
               </div>
             </button>
             <button class="feature-buttons__button">
               <div class="feature-buttons__rotate-fix">
-                <span><b>RESERVATION</b></span>
+                <span class="feature-buttons__text"><b>RESERVATION</b></span>
                 <span
                   ><i
                     class="fa-regular fa-bookmark feature-buttons__icon"
@@ -98,9 +98,12 @@
                 ></span>
               </div>
             </button>
+            <!-- USUNĄĆ DIV'Y Z PRZYCISKÓW -->
           </div>
         </div>
       </section>
     </div>
+
+    <script type="module" src="./src/js/script.js"></script>
   </body>
 </html>

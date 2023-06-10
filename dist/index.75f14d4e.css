@@ -1,3 +1,9 @@
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 *, :before, :after {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +25,7 @@ a {
 
 .header {
   width: 100%;
-  height: 550px;
+  height: 600px;
   z-index: 1;
   position: relative;
 }
@@ -160,6 +166,11 @@ a {
   height: 100%;
 }
 
+.header__info-text {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .header__contact-section {
   background-color: #e5e5e5;
   justify-content: space-between;
@@ -177,7 +188,7 @@ a {
   position: relative;
 }
 
-.feature-buttons__h2 {
+.feature-buttons__text {
   width: 100%;
   height: 100px;
   position: absolute;
@@ -185,7 +196,7 @@ a {
   left: 0%;
 }
 
-.feature-buttons__h2 h2 {
+.feature-buttons__text h2 {
   text-align: center;
   color: #22365f;
   max-width: 300px;
@@ -195,6 +206,13 @@ a {
   margin: 0 auto;
   padding: 1rem;
   font-size: 2rem;
+}
+
+.feature-buttons__text p {
+  text-align: center;
+  color: #22365f;
+  margin-top: 1rem;
+  font-size: 1.25rem;
 }
 
 .feature-buttons__background {
@@ -230,6 +248,7 @@ a {
 }
 
 .feature-buttons__button div {
+  font-size: 1.25rem;
   rotate: -45deg;
 }
 
@@ -238,10 +257,17 @@ a {
 }
 
 .feature-buttons__button:hover {
-  color: #e5e5e5;
   background-color: #3862b667;
   border: 3px solid #3862b6;
   box-shadow: 0 0 9px 3px #000;
+}
+
+.feature-buttons__button:hover .feature-buttons__icon {
+  display: block;
+}
+
+.feature-buttons__button:hover .feature-buttons__text {
+  display: none;
 }
 
 .feature-buttons__button span {
@@ -249,7 +275,8 @@ a {
 }
 
 .feature-buttons__icon {
-  font-size: 2rem;
+  font-size: 4rem;
+  display: none;
 }
 
 /*# sourceMappingURL=index.75f14d4e.css.map */
