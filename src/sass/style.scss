@@ -185,55 +185,5 @@ a {
     z-index: 1;
   }
 
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    margin: 100px auto 0 auto;
-    height: 220px;
-    width: 220px;
-    transform: rotate(45deg);
-  }
 
-  &__button {
-    position: relative;
-    height: 100px;
-    width: 100px;
-    border-radius: 8px;
-    border: 3px solid $primary;
-    transition: border 0.3s, background-color 0.3s, color 0.3s, box-shadow .3s;
-    cursor: pointer;
-
-    div {
-      rotate: -45deg;
-      font-size: 1.25rem;
-    }
-
-    &:first-child {
-      visibility: hidden;
-    }
-
-    &:hover {
-      border: 3px solid $secondary;
-      background-color: $secondary-light;
-      box-shadow: 0px 0px 9px 3px black;
-    }
-
-    &:hover .feature-buttons__icon {
-      display: block;
-    }
-
-    &:hover .feature-buttons__text {
-      display: none;
-    }
-
-    span {
-      display: inline-block;
-    }
-  }
-
-  &__icon {
-    display: none;
-    font-size: 4rem;
-  }
 }
