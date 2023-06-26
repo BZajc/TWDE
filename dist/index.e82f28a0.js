@@ -557,46 +557,14 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"dV6cC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _something = require("./something");
-var _somethingDefault = parcelHelpers.interopDefault(_something);
-console.log((0, _somethingDefault.default));
-
-},{"./something":"8GLge","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8GLge":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const smth = "smth";
-exports.default = smth;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
+const bookingButton = document.querySelector(".booking-btn");
+const bookingSection = document.querySelector(".booking");
+function scrollToBooking() {
+    bookingSection.scrollIntoView({
+        behavior: "smooth"
     });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+}
+bookingButton.addEventListener("click", scrollToBooking);
 
 },{}]},["fyTPu","dV6cC"], "dV6cC", "parcelRequire777f")
 

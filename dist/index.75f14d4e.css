@@ -1,9 +1,3 @@
-.wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 *, :before, :after {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +19,7 @@ a {
 
 .header {
   width: 100%;
-  height: 600px;
+  height: 650px;
   z-index: 1;
   position: relative;
 }
@@ -113,6 +107,7 @@ a {
 
 .header__language-container {
   background-color: #0000;
+  padding: 0;
 }
 
 .header__button {
@@ -166,6 +161,15 @@ a {
   height: 100%;
 }
 
+.header__button .additional-icon {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.header__button .language-icon {
+  width: 45px;
+}
+
 .header__info-text {
   text-align: center;
   font-size: 1.5rem;
@@ -217,14 +221,183 @@ a {
 
 .feature-buttons__background {
   width: 100%;
-  height: 400px;
-  z-index: 1;
+  height: 450px;
+  z-index: 2;
   background-color: #e5e5e5;
   border-radius: 25px;
   justify-content: center;
   display: flex;
   position: relative;
   transform: translateY(-6%);
+}
+
+.feature-buttons__container {
+  width: 200px;
+  height: 200px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15rem;
+  display: grid;
+  rotate: 45deg;
+}
+
+.feature-buttons__container .hidden {
+  visibility: hidden;
+}
+
+.feature-buttons__button {
+  height: auto;
+  width: auto;
+  background-color: #3862b667;
+  border: 1px solid #3862b6;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.feature-buttons__rotate-fix {
+  rotate: -45deg;
+}
+
+.booking {
+  position: relative;
+}
+
+.booking__background {
+  width: 100%;
+  height: 450px;
+  z-index: 1;
+  background-color: #e5e5e5;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: relative;
+  transform: translateY(-15%);
+}
+
+.booking__small-container {
+  height: 50px;
+  width: 150px;
+  z-index: 5;
+  background-color: #3862b6;
+  border-radius: 12px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 1.25rem;
+  display: flex;
+}
+
+.booking__primary-option {
+  color: #e5e5e5;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: .9rem;
+  position: relative;
+}
+
+.booking__primary-option:before, .booking__primary-option:after {
+  content: "";
+  width: 0;
+  border-bottom: 3px solid #e5e5e5;
+  transition: all .3s;
+  position: absolute;
+  bottom: 0;
+}
+
+.booking__primary-option:before {
+  right: 50%;
+}
+
+.booking__primary-option:after {
+  left: 50%;
+}
+
+.booking__primary-option:hover:before, .booking__primary-option:hover:after {
+  width: 50%;
+}
+
+.booking__main-container {
+  width: 300px;
+  height: 100px;
+  background-color: #3862b667;
+  border-radius: 12px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  transform: translateY(-15%);
+}
+
+.booking__main-container--2 {
+  width: 300px;
+  height: 400px;
+  background-color: #3862b667;
+  border-radius: 12px;
+  flex-direction: column;
+  padding: 1rem;
+  display: flex;
+}
+
+.booking__container-selector {
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.booking__selector {
+  cursor: pointer;
+  transition: color .3s;
+  position: relative;
+}
+
+.booking__selector:before, .booking__selector:after {
+  content: "";
+  width: 0;
+  border-bottom: 3px solid #e5e5e5;
+  transition: all .3s;
+  position: absolute;
+  bottom: 0;
+}
+
+.booking__selector:before {
+  right: 50%;
+}
+
+.booking__selector:after {
+  left: 50%;
+}
+
+.booking__selector:hover:before, .booking__selector:hover:after {
+  width: 50%;
+}
+
+.booking__selector:hover {
+  color: #e5e5e5;
+}
+
+.display-images {
+  width: 100%;
+  height: 400px;
+  background-color: #ff0;
+}
+
+.display-images__rotated-square {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  display: flex;
+  rotate: 45deg;
 }
 
 /*# sourceMappingURL=index.75f14d4e.css.map */
