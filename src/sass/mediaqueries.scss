@@ -1,0 +1,19 @@
+@media (min-width: 576px) {
+  .header {
+    &__contact-section {
+      font-size: 1.5rem;
+    }
+  }
+
+  .feature-buttons {
+    &__container {
+      width: 250px;height: 250px;
+    }
+  }
+
+  .booking {
+    &__small-container {
+      margin-top: 75px;
+    }
+  }
+}

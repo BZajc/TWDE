@@ -1,9 +1,3 @@
-.wrapper {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-}
-
 @mixin headersStyling {
     text-align: center;
     color: $primary;
@@ -12,4 +6,43 @@
     padding: 1rem;
     border-radius: 25px;
     max-width: 300px;
+}
+
+@mixin overlappingBackground {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-color: $white;
+    border-radius: 25px;
+    transform: translateY(-6%);
+    z-index: 1;
+}
+
+@mixin underlineHover {
+  position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      transition: 0.3s;
+      border-bottom: 3px solid $white;
+    }
+
+    &::before {
+      right: 50%;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 50%;
+    }
 }
