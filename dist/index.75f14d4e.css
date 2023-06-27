@@ -249,12 +249,21 @@ a {
 .feature-buttons__button {
   height: auto;
   width: auto;
+  cursor: pointer;
   background-color: #3862b667;
   border: 1px solid #3862b6;
   border-radius: 15px;
   justify-content: center;
   align-items: center;
+  transition: box-shadow .3s, scale .3s, border .3s, background-color .3s;
   display: flex;
+}
+
+.feature-buttons__button:hover {
+  background-color: #3862b68f;
+  border: 1px solid #22365f;
+  scale: .9;
+  box-shadow: 3px 3px 5px 1px #000;
 }
 
 .feature-buttons__rotate-fix {
@@ -270,6 +279,10 @@ a {
   height: 450px;
   z-index: 1;
   background-color: #e5e5e5;
+  background-image: url("booking-bg-low.f6e2362d.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 25px;
   flex-direction: column;
   justify-content: flex-start;
@@ -281,7 +294,7 @@ a {
 
 .booking__small-container {
   height: 50px;
-  width: 150px;
+  width: 200px;
   z-index: 5;
   background-color: #3862b6;
   border-radius: 12px;
@@ -289,13 +302,19 @@ a {
   align-items: center;
   margin-top: 50px;
   font-size: 1.25rem;
+  transition: box-shadow .3s;
   display: flex;
+}
+
+.booking__small-container:hover {
+  box-shadow: 0 3px 5px 1px #000;
 }
 
 .booking__primary-option {
   color: #e5e5e5;
   cursor: pointer;
   border-radius: 25px;
+  margin: .2rem;
   padding: .9rem;
   position: relative;
 }
@@ -328,8 +347,14 @@ a {
   border-radius: 12px;
   justify-content: space-around;
   align-items: center;
+  transition: background-color .3s, box-shadow .3s;
   display: flex;
   transform: translateY(-15%);
+}
+
+.booking__main-container:hover {
+  background-color: #3862b68f;
+  box-shadow: 0 3px 5px 1px #000;
 }
 
 .booking__main-container--2 {
@@ -338,8 +363,14 @@ a {
   background-color: #3862b667;
   border-radius: 12px;
   flex-direction: column;
+  margin-bottom: 5rem;
   padding: 1rem;
+  transition: background-color .3s;
   display: flex;
+}
+
+.booking__main-container--2:hover {
+  background-color: #3862b68f;
 }
 
 .booking__container-selector {
@@ -347,13 +378,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: .5rem;
+  padding: 1rem .5rem;
   font-size: 1.5rem;
   display: flex;
 }
 
 .booking__selector {
   cursor: pointer;
+  padding: .2rem;
   transition: color .3s;
   position: relative;
 }
@@ -381,6 +413,11 @@ a {
 
 .booking__selector:hover {
   color: #e5e5e5;
+}
+
+.booking__icon {
+  width: 25px;
+  vertical-align: middle;
 }
 
 .display-images {
