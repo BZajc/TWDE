@@ -211,6 +211,7 @@ a {
   }
 
   &__button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,11 +228,33 @@ a {
       box-shadow: 3px 3px 5px 1px black;
       border: 1px solid $primary;
       background-color: $secondary-special;
+
+      &::before {
+        border: 1px solid black;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 5%;
+      top: 5%;
+      width: 105%;
+      height: 105%;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      transition: border 0.3s;
     }
   }
 
   &__rotate-fix {
     rotate: -45deg;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 1rem;
+    left: auto;
   }
 }
 
@@ -243,7 +266,7 @@ a {
     @include overlappingBackground;
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url('../img/booking-bg-low.jpg');
+    background-image: url("../img/booking-bg-low.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -259,11 +282,10 @@ a {
     background-color: $secondary;
     font-size: 1.25rem;
     z-index: 5;
-    transition: box-shadow .3s;
+    transition: box-shadow 0.3s;
     &:hover {
       box-shadow: 0px 3px 5px 1px black;
     }
-
   }
   &__primary-option {
     margin: 0.2rem;
@@ -282,7 +304,7 @@ a {
     transform: translateY(-15%);
     border-radius: 12px;
     background-color: $secondary-light;
-    transition: background-color 0.3s, box-shadow .3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 
     &:hover {
       background-color: $secondary-special;
@@ -290,12 +312,14 @@ a {
     }
 
     &--2 {
+      position: relative;
       display: flex;
       flex-direction: column;
       margin-bottom: 5rem;
       padding: 1rem;
       width: 300px;
-      height: 400px;
+      height: auto;
+      max-height: 300px;
       border-radius: 12px;
       background-color: $secondary-light;
       transition: background-color 0.3s;
