@@ -372,6 +372,7 @@ a {
   align-items: center;
   transition: background-color .3s, box-shadow .3s;
   display: flex;
+  position: relative;
   transform: translateY(-15%);
 }
 

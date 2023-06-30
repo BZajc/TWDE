@@ -3,6 +3,10 @@
     font-size: 1.5rem;
   }
 
+  .feature-buttons__background {
+    height: 500px;
+  }
+
   .feature-buttons__text h2 {
     max-width: 500px;
     font-size: 2rem;
