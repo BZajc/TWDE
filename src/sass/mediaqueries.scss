@@ -6,6 +6,9 @@
   }
 
   .feature-buttons {
+    &__background {
+      height: 500px;
+    }
     &__text {
       h2 {
         font-size: 2rem;
