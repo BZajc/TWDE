@@ -566,6 +566,6 @@ function scrollToBooking() {
 }
 bookingButton.addEventListener("click", scrollToBooking);
 
-},{}]},["fyTPu","dV6cC"], "dV6cC", "parcelRequire777f")
+},{}]},["fyTPu","dV6cC"], "dV6cC", "parcelRequirea4d7")
 
 //# sourceMappingURL=index.e82f28a0.js.map
