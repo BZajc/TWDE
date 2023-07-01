@@ -193,7 +193,10 @@ a {
     justify-content: center;
     width: 100%;
     height: 450px;
-    background-color: $white;
+    background-image: url('../img/section-background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 25px;
     transform: translateY(-6%);
     z-index: 2;
@@ -268,7 +271,7 @@ a {
   &__background {
     transform: translateY(-15%);
     @include overlappingBackground;
-    height: 500px;
+    height: 650px;
     flex-direction: column;
     justify-content: flex-start;
     background-image: url("../img/booking-bg-low.jpg");
@@ -282,7 +285,7 @@ a {
     justify-content: space-around;
     height: 50px;
     width: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
     border-radius: 12px;
     background-color: $secondary;
     font-size: 1.25rem;
@@ -365,18 +368,17 @@ a {
 
 // Display images section
 .display-images {
+  position: relative;
   width: 100%;
-  height: 400px;
-  background-color: yellow;
-
-  &__rotated-square {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    height: 200px;
-    width: 200px;
-    background-color: red;
-    rotate: 45deg;
+  background-color: red;
+  transform: translateY(-30%);
+  @include overlappingBackground;
+  
+  &__background {
   }
+}
+
+#bgCanvas {
+  width: 100%;
+  height: 500px;
 }
