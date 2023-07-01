@@ -246,7 +246,7 @@ a {
   gap: 10px;
   margin-top: 15rem;
   display: grid;
-  rotate: 45deg !important;
+  transform: rotate(45deg);
 }
 
 .feature-buttons__container .hidden {
@@ -294,7 +294,7 @@ a {
 }
 
 .feature-buttons__rotate-fix {
-  rotate: -45deg;
+  transform: rotate(-45deg);
 }
 
 .feature-buttons__footer {
@@ -484,7 +484,7 @@ a {
   height: 200px;
   border-radius: 15px;
   overflow: hidden;
-  rotate: 45deg;
+  transform: rotate(45deg);
 }
 
 .display-images__rotate-fix {
