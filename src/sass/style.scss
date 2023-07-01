@@ -210,7 +210,7 @@ a {
     width: 200px;
     height: 200px;
     margin-top: 15rem;
-    rotate: 45deg;
+    rotate: 45deg !important;
 
     .hidden {
       visibility: hidden;
@@ -240,6 +240,8 @@ a {
 
       &::before {
         border: 1px solid black;
+        width: 105%;
+        height: 105%;
       }
     }
 
@@ -248,11 +250,11 @@ a {
       position: absolute;
       left: 5%;
       top: 5%;
-      width: 105%;
-      height: 105%;
+      width: 125%;
+      height: 125%;
       border-radius: inherit;
       border: 1px solid transparent;
-      transition: border 0.3s;
+      transition: border 0.3s, width 0.3s, height 0.3s;
     }
   }
 

@@ -246,7 +246,7 @@ a {
   gap: 10px;
   margin-top: 15rem;
   display: grid;
-  rotate: 45deg;
+  rotate: 45deg !important;
 }
 
 .feature-buttons__container .hidden {
@@ -276,16 +276,18 @@ a {
 }
 
 .feature-buttons__button:hover:before {
+  width: 105%;
+  height: 105%;
   border: 1px solid #000;
 }
 
 .feature-buttons__button:before {
   content: "";
-  width: 105%;
-  height: 105%;
+  width: 125%;
+  height: 125%;
   border-radius: inherit;
   border: 1px solid #0000;
-  transition: border .3s;
+  transition: border .3s, width .3s, height .3s;
   position: absolute;
   top: 5%;
   left: 5%;
