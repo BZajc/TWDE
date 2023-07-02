@@ -405,19 +405,6 @@ a {
   transform: translateY(-35%);
   @include overlappingBackground;
 
-  &__background {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: inherit;
-  }
-
   &__background-image {
     position: absolute;
     width: 100%;
