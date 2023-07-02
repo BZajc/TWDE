@@ -375,24 +375,16 @@ a {
   position: relative;
   width: 100%;
   background-color: red;
-<<<<<<< HEAD
   transform: translateY(-35%);
   @include overlappingBackground;
 
   &__background {
     position: relative;
-=======
-  transform: translateY(-30%);
-  @include overlappingBackground;
-
-  &__background {
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-<<<<<<< HEAD
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -410,8 +402,6 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(3px);
-=======
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
   }
 
   &__container {
@@ -420,10 +410,7 @@ a {
     transform: rotate(45deg);
     overflow: hidden;
     border-radius: 15px;
-<<<<<<< HEAD
     z-index: 10;
-=======
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
   }
 
   &__rotate-fix {
@@ -431,10 +418,6 @@ a {
     width: 150%;
     height: 150%;
     transform: rotate(-45deg) translateY(-25%);
-<<<<<<< HEAD
-=======
-    background-image: url("https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg");
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -450,11 +433,8 @@ a {
     text-align: center;
     color: $white;
   }
-<<<<<<< HEAD
 
   &__text {
     font-size: 1.1rem;
   }
-=======
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
 }

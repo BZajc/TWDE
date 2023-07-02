@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from 'axios'
 
 const bookingButton = document.querySelector(".booking-btn");
@@ -37,13 +36,3 @@ const getImages = async () => {
 window.addEventListener('load', function() {
   getImages();
 });
-=======
-const bookingButton = document.querySelector(".booking-btn");
-const bookingSection = document.querySelector(".booking");
-
-function scrollToBooking() {
-  bookingSection.scrollIntoView({ behavior: "smooth" });
-}
-
-bookingButton.addEventListener("click", scrollToBooking);
->>>>>>> a144ff469fee49895fceb27ae4018abf1b9893e4
