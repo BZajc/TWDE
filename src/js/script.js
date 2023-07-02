@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios";
 
 const bookingButton = document.querySelector(".booking-btn");
 const bookingSection = document.querySelector(".booking");
@@ -11,28 +11,41 @@ bookingButton.addEventListener("click", scrollToBooking);
 
 // Pixabay API to download random images for display image section
 const getImages = async () => {
-  const imageContainer = document.querySelector('.display-images__rotate-fix');
-  const imageContainerBg = document.querySelector('.display-images__background-image');
-  const apiKey = '27929930-2f9fa1fa317d1e41006cd69e4';
-  const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=turystyka&image_type=photo`;
+  const imageContainer = document.querySelector(".display-images__rotate-fix");
+  const imageContainerBg = document.querySelector(
+    ".display-images__background-image"
+  );
+  const apiKey = "27929930-2f9fa1fa317d1e41006cd69e4";
+  const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=turystyka&image_type=photo&per_page=50`;
 
   try {
     const response = await axios.get(apiUrl);
     const data = response.data;
 
-    if (data.hits && data.hits.length > 0) {
-      const randomIndex = Math.floor(Math.random() * data.hits.length);
-      const imageUrl = data.hits[randomIndex].largeImageURL;
+    // Getting random image
+    const randomIndex = Math.floor(Math.random() * data.hits.length);
+    const imageUrl = data.hits[randomIndex].largeImageURL;
 
+    // Creating new image element
+    const image = new Image();
+    image.src = imageUrl;
+
+    image.addEventListener('load', () => {
       imageContainer.style.backgroundImage = `url('${imageUrl}')`;
       imageContainerBg.style.backgroundImage = `url('${imageUrl}')`;
-    }
-    console.log(response.data);
+
+      imageContainer.classList.add('lazy-loading');
+    });
+
+    // Applying image as a background
+    imageContainer.style.backgroundImage = `url('${imageUrl}')`;
+    imageContainerBg.style.backgroundImage = `url('${imageUrl}')`;
+    console.log(data);
   } catch (error) {
-    console.log('An error occurred while fetching the images:', error);
+    console.log("An error occurred while fetching the images:", error);
   }
 };
 
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   getImages();
 });

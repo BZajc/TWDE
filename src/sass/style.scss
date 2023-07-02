@@ -23,10 +23,18 @@ a {
   color: inherit;
 }
 
+.lazy-loading {
+  @include lazyLoadingAnim3;
+}
+
+.hide-before-loading {
+  opacity: 0;
+}
+
 .header {
   position: relative;
   width: 100%;
-  height: 750px;
+  height: 850px;
   z-index: 1;
 
   &__bg {
@@ -59,12 +67,20 @@ a {
     text-align: center;
     color: $primary;
     font-size: 2rem;
-    margin: 5rem auto;
+    margin: 5rem auto 0rem;
     background-color: $white;
     padding: 1rem;
     border-radius: 25px;
     max-width: 300px;
     @include lazyLoadingAnim2;
+  }
+
+  &__some-text {
+    margin: 1rem auto 5rem;
+    text-align: center;
+    color: $white;
+    max-width: 300px;
+    font-size: 1.5rem;
   }
 
   &__button-container {
@@ -164,6 +180,17 @@ a {
 // Feature buttons section
 .feature-buttons {
   position: relative;
+
+  &__delayed-loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: $white;
+    z-index: 100;
+  }
 
   &__text {
     position: absolute;
@@ -435,6 +462,6 @@ a {
   }
 
   &__text {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
