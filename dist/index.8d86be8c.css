@@ -1,0 +1,33 @@
+@media (width >= 576px) {
+  .header__contact-section {
+    font-size: 1.5rem;
+  }
+
+  .feature-buttons__background {
+    height: 500px;
+  }
+
+  .feature-buttons__text h2 {
+    max-width: 500px;
+    font-size: 2rem;
+  }
+
+  .feature-buttons__text p {
+    font-size: 1.5rem;
+  }
+
+  .feature-buttons__container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .feature-buttons__rotate-fix {
+    font-size: 1.5rem;
+  }
+
+  .booking__small-container {
+    margin-top: 75px;
+  }
+}
+
+/*# sourceMappingURL=index.8d86be8c.css.map */
