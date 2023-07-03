@@ -120,8 +120,7 @@ window.addEventListener("load", function () {
   // Display images after loading the page
   getImages();
 
-  // Change images every 6 seconds
-
+  // Change images every 5 seconds
   setInterval(() => {
     if (!errorOccuredPixabay) getImages();
   }, 5000);
