@@ -35,14 +35,14 @@
 
 @mixin lazyLoadingAnim3 {
   animation-name: lazyLoadingAnim2;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
   @keyframes lazyLoadingAnim3 {
     0% {
       opacity: 0;
     }
-    90% {
+    50% {
       opacity: 0.5;
     }
     100% {

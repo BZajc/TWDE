@@ -23,14 +23,6 @@ a {
   color: inherit;
 }
 
-.lazy-loading {
-  @include lazyLoadingAnim3;
-}
-
-.hide-before-loading {
-  opacity: 0;
-}
-
 .header {
   position: relative;
   width: 100%;
@@ -303,12 +295,13 @@ a {
     transform: translateY(-15%);
     @include overlappingBackground;
     height: 650px;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-image: url("../img/booking-bg-low.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // background-image: url("../img/booking-bg-low.jpg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background-color: rgb(0, 238, 255); //remove it
   }
   &__small-container {
     display: flex;
@@ -322,6 +315,7 @@ a {
     font-size: 1.25rem;
     z-index: 5;
     transition: box-shadow 0.3s;
+    display: none; //remove it
     &:hover {
       box-shadow: 0px 3px 5px 1px black;
     }
@@ -345,6 +339,7 @@ a {
     border-radius: 12px;
     background-color: $secondary-light;
     transition: background-color 0.3s, box-shadow 0.3s;
+    display: none; //remove it
 
     &:hover {
       background-color: $secondary-special;
@@ -363,6 +358,7 @@ a {
       border-radius: 12px;
       background-color: $secondary-light;
       transition: background-color 0.3s;
+      display: none; //remove it
 
       &:hover {
         background-color: $secondary-special;
@@ -405,6 +401,14 @@ a {
   transform: translateY(-35%);
   @include overlappingBackground;
 
+  .lazy-loading {
+    @include lazyLoadingAnim3;
+  }
+
+  .hide-before-loading {
+    opacity: 0;
+  }
+
   &__background-image {
     position: absolute;
     width: 100%;
@@ -424,7 +428,11 @@ a {
     transform: rotate(45deg);
     overflow: hidden;
     border-radius: 15px;
+    transition: scale 0.3s;
     z-index: 10;
+    &:hover {
+      scale: 1.05;
+    }
   }
 
   &__rotate-fix {
@@ -435,6 +443,15 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: scale 0.3s !important;
+
+    &:hover {
+      scale: 0.95;
+    }
+
+    &:hover .display-images__text-background .display-images__text {
+      font-size: 1.6rem;
+    }
   }
 
   &__text-background {
@@ -450,5 +467,24 @@ a {
 
   &__text {
     font-size: 1.3rem;
+    transition: font-size 0.3s;
+  }
+
+  &__error {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 15;
+    min-width: 250px;
+    background-color: #ffffff85;
+    border-radius: 8px;
+
+    a {
+      color: rgb(30, 27, 207);
+    }
   }
 }
