@@ -64,6 +64,7 @@ const pixabayCatchStyles = () => {
 
 // Animation for Pixabay Images
 function loadImagesAnimation(imageUrl) {
+
   // Apply transition effect to background images
   imageRotateFix.style.transition = "opacity 1s";
   imageContainerBg.style.transition = "opacity 1s";
@@ -79,6 +80,7 @@ function loadImagesAnimation(imageUrl) {
       imageRotateFix.style.backgroundImage = `url('${imageUrl}')`;
       imageContainerBg.style.backgroundImage = `url('${imageUrl}')`;
       imagesText.textContent = randomTextPixabay();
+
       setTimeout(() => {
         // Display images
         imageRotateFix.style.opacity = 1;
@@ -120,8 +122,33 @@ window.addEventListener("load", function () {
   // Display images after loading the page
   getImages();
 
-  // Change images every 5 seconds
-  setInterval(() => {
-    if (!errorOccuredPixabay) getImages();
-  }, 5000);
+  let intervalId = null; // Used to check if interval exist
+
+  // Running Pixabay API only when the user sees the element (imageContainerBg)
+  window.addEventListener("scroll", () => {
+    const element = imageContainerBg;
+    const elementHeight = element.offsetHeight;
+    const elementTop = element.getBoundingClientRect().top;
+    const elementBottom = elementTop + elementHeight;
+    const windowHeight = window.innerHeight;
+
+    // Checking if user sees the element
+    if (elementTop < windowHeight && elementBottom > 0) {
+
+      // Run interval if it doesn't exist
+      if (!intervalId) {
+        intervalId = setInterval(() => {
+          if (!errorOccuredPixabay) getImages();
+        }, 5000);
+      }
+    }
+
+    // Checking if element is visible for user
+    if (elementTop > windowHeight || elementBottom < 0) {
+
+      // Stop interval if exist
+      clearInterval(intervalId);
+      intervalId = null; // Reset interval to null
+    }
+  });
 });
