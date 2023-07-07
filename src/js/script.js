@@ -11,6 +11,9 @@ const imagesText = document.querySelector(".display-images__text");
 const imageError = document.querySelector(".display-images__error");
 const imageStopStart = document.querySelector(".display-images__stop-start");
 const pixabayLink = document.querySelector(".display-images__pixabay a");
+const imageAuthor = document.querySelector(".display-images__author")
+const imageManageBox = document.querySelector(".display-images__manage-box")
+const imageDelivered = document.querySelector(".display-images__delivered")
 
 let previousText = null;
 let previousImage = null;
@@ -35,14 +38,18 @@ const getImages = async () => {
   try {
     const response = await axios.get(apiUrl);
     const data = response.data;
-
+    
     // Getting random image
     const randomIndex = Math.floor(Math.random() * data.hits.length);
+    
+    // Getting author of the image
+    const author = data.hits[randomIndex].user;
 
     // Link to the image page
     const linkToPage = data.hits[randomIndex].pageURL
 
     console.log(data.hits[randomIndex]);
+
     // Check if the randomly selected image is the same as the previous one
     while (data.hits[randomIndex].webformatURL === previousImage) {
       randomIndex = Math.floor(Math.random() * data.hits.length);
@@ -53,6 +60,9 @@ const getImages = async () => {
     // Creating new image element
     const image = new Image();
     image.src = imageUrl;
+
+    // Author of the image
+    imageAuthor.textContent = author
 
     // Wait for images to load
     image.addEventListener("load", () => {
@@ -75,6 +85,8 @@ const getImages = async () => {
 // Styles for catch in Pixabay API function
 const pixabayCatchStyles = () => {
   imagesTextBg.style.display = "none";
+  imageManageBox.style.display = "none"
+  imageDelivered.style.display = "none"
   imageError.style.display = "block";
   imageRotateFix.style.opacity = "1";
   imageContainerBg.style.backgroundImage = `url('https://i.imgflip.com/3kk9xq.png')`;
