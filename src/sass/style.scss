@@ -448,12 +448,8 @@ a {
     background-size: cover;
     transition: 0.3s !important;
 
-    &:hover {
-      scale: 0.95;
-    }
-
     &:hover .display-images__text-background .display-images__text {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
     }
   }
 
@@ -489,5 +485,44 @@ a {
     a {
       color: rgb(30, 27, 207);
     }
+  }
+
+  &__manage-box {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    left: 50%;
+    bottom: 10%;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__spam,
+  &__manage-box {
+    color: $white;
+    z-index: 15;
+    border-radius: 8px;
+    background-color: #2b2b2bbf;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 0.5rem;
+  }
+
+  &__stop-start,
+  &__pixabay {
+    padding: 0.5rem;
+    transition: color 0.3s;
+    user-select: none;
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__spam {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:#9c5c5cbf;
   }
 }

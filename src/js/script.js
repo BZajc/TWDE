@@ -9,10 +9,17 @@ const imageContainerBg = document.querySelector(
 const imagesTextBg = document.querySelector(".display-images__text-background");
 const imagesText = document.querySelector(".display-images__text");
 const imageError = document.querySelector(".display-images__error");
+const imageStopStart = document.querySelector(".display-images__stop-start");
+const pixabayLink = document.querySelector(".display-images__pixabay a");
 
 let previousText = null;
 let previousImage = null;
 let errorOccuredPixabay = false;
+let isRunning = true;
+let clickBlocked = false
+
+// Check if interval exist to display Pixabay images
+let intervalId = null;
 
 // Smooth scrolling to booking section
 function scrollToBooking() {
@@ -30,14 +37,18 @@ const getImages = async () => {
     const data = response.data;
 
     // Getting random image
-    let randomIndex = Math.floor(Math.random() * data.hits.length);
+    const randomIndex = Math.floor(Math.random() * data.hits.length);
 
+    // Link to the image page
+    const linkToPage = data.hits[randomIndex].pageURL
+
+    console.log(data.hits[randomIndex]);
     // Check if the randomly selected image is the same as the previous one
-    while (data.hits[randomIndex].largeImageURL === previousImage) {
+    while (data.hits[randomIndex].webformatURL === previousImage) {
       randomIndex = Math.floor(Math.random() * data.hits.length);
     }
 
-    const imageUrl = data.hits[randomIndex].largeImageURL;
+    const imageUrl = data.hits[randomIndex].webformatURL;
 
     // Creating new image element
     const image = new Image();
@@ -47,6 +58,13 @@ const getImages = async () => {
     image.addEventListener("load", () => {
       loadImagesAnimation(imageUrl);
     });
+
+    // Add link of the image to the button
+    pixabayLink.addEventListener("click", () => {
+      pixabayLink.href = linkToPage
+      pixabayLink.target = "_blank";
+    })
+
   } catch (error) {
     console.log("An error occurred while fetching the images:", error);
     pixabayCatchStyles();
@@ -64,29 +82,27 @@ const pixabayCatchStyles = () => {
 
 // Animation for Pixabay Images
 function loadImagesAnimation(imageUrl) {
-
   // Apply transition effect to background images
   imageRotateFix.style.transition = "opacity 1s";
   imageContainerBg.style.transition = "opacity 1s";
 
   // Display images after loading with fading effect
+
+  // Hide images when loading the new ones
+  imageRotateFix.style.opacity = 0;
+  imageContainerBg.style.opacity = 0;
+
   setTimeout(() => {
-    // Hide images when loading the new ones
-    imageRotateFix.style.opacity = 0;
-    imageContainerBg.style.opacity = 0;
+    // Set images as background
+    imageRotateFix.style.backgroundImage = `url('${imageUrl}')`;
+    imageContainerBg.style.backgroundImage = `url('${imageUrl}')`;
+    imagesText.textContent = randomTextPixabay();
 
     setTimeout(() => {
-      // Set images as background
-      imageRotateFix.style.backgroundImage = `url('${imageUrl}')`;
-      imageContainerBg.style.backgroundImage = `url('${imageUrl}')`;
-      imagesText.textContent = randomTextPixabay();
-
-      setTimeout(() => {
-        // Display images
-        imageRotateFix.style.opacity = 1;
-        imageContainerBg.style.opacity = 1;
-      }, 100);
-    }, 1000);
+      // Display images
+      imageRotateFix.style.opacity = 1;
+      imageContainerBg.style.opacity = 1;
+    }, 100);
   }, 1000);
 }
 
@@ -118,37 +134,70 @@ const randomTextPixabay = () => {
   return randomText;
 };
 
+// Running Pixabay API only when the user sees the element (imageContainerBg)
+const isVisiblePixabay = function () {
+  const element = imageContainerBg;
+  const elementHeight = element.offsetHeight;
+  const elementTop = element.getBoundingClientRect().top;
+  const elementBottom = elementTop + elementHeight;
+  const windowHeight = window.innerHeight;
+
+  // Checking if user sees the element
+  if (elementTop < windowHeight && elementBottom > 0) {
+    // Run interval if it doesn't exist
+    if (!intervalId) {
+      intervalId = setInterval(() => {
+        if (!errorOccuredPixabay) getImages();
+      }, 5000);
+    }
+  }
+
+  // Checking if element is visible for user
+  if (elementTop > windowHeight || elementBottom < 0) {
+    // Stop interval if exist
+    clearInterval(intervalId);
+    intervalId = null; // Reset interval to null
+  }
+};
+
 window.addEventListener("load", function () {
   // Display images after loading the page
   getImages();
-
-  let intervalId = null; // Used to check if interval exist
-
-  // Running Pixabay API only when the user sees the element (imageContainerBg)
-  window.addEventListener("scroll", () => {
-    const element = imageContainerBg;
-    const elementHeight = element.offsetHeight;
-    const elementTop = element.getBoundingClientRect().top;
-    const elementBottom = elementTop + elementHeight;
-    const windowHeight = window.innerHeight;
-
-    // Checking if user sees the element
-    if (elementTop < windowHeight && elementBottom > 0) {
-
-      // Run interval if it doesn't exist
-      if (!intervalId) {
-        intervalId = setInterval(() => {
-          if (!errorOccuredPixabay) getImages();
-        }, 5000);
-      }
-    }
-
-    // Checking if element is visible for user
-    if (elementTop > windowHeight || elementBottom < 0) {
-
-      // Stop interval if exist
-      clearInterval(intervalId);
-      intervalId = null; // Reset interval to null
-    }
-  });
+  isVisiblePixabay();
 });
+
+window.addEventListener("scroll", () => {
+  isVisiblePixabay();
+});
+
+// Scrolling to the top of the page after reload
+// window.addEventListener("beforeunload", function () {
+//   window.scrollTo(0, 0);
+// });
+
+// Stop or start displaying Pixabay images
+const toggleGetImages = () => {
+  if (clickBlocked) {
+    return // Do not allow user to click button
+  }
+
+  if (isRunning) {
+    clearInterval(intervalId); // Stop interval
+    intervalId = null;
+  } else {
+    getImages()
+    isVisiblePixabay()
+  }
+  isRunning = !isRunning; // Reverse flag
+
+  // Change textContent of the button
+  imageStopStart.textContent = isRunning ? "Stop changing" : "Start changing";
+
+  // Block button from being clicked for one second
+  clickBlocked = true;
+  setTimeout(() => {
+    clickBlocked = false;
+  }, 1000);
+};
+
+imageStopStart.addEventListener("click", toggleGetImages);
