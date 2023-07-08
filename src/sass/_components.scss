@@ -4,8 +4,15 @@
     font-size: 2rem;
     background-color: $white;
     padding: 1rem;
-    border-radius: 25px;
+    border-radius: 12px;
     max-width: 300px;
+    width: 100%;
+}
+
+@mixin backgroundImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @mixin overlappingBackground {

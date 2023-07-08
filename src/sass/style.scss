@@ -26,7 +26,7 @@ a {
 .header {
   position: relative;
   width: 100%;
-  height: 850px;
+  height: 650px;
   z-index: 1;
 
   &__bg {
@@ -34,8 +34,7 @@ a {
     width: 100%;
     height: 100%;
     background-image: url("../img/header-bg-low.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
+    @include backgroundImage;
     z-index: 2;
   }
 
@@ -213,9 +212,7 @@ a {
     width: 100%;
     height: 450px;
     background-image: url("../img/section-background.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    @include backgroundImage;
     border-radius: 25px;
     transform: translateY(-6%);
     z-index: 2;
@@ -247,8 +244,7 @@ a {
     border: 1px solid $secondary;
     border-radius: 15px;
     cursor: pointer;
-    transition: box-shadow 0.3s, scale 0.3s, border 0.3s, background-color 0.3s,
-      color 0.3s;
+    transition: 0.3s;
 
     &:hover {
       scale: 0.9;
@@ -261,6 +257,16 @@ a {
         border: 1px solid black;
         width: 105%;
         height: 105%;
+      }
+
+      .feature-buttons__p {
+        font-size: 0;
+        opacity: 0;
+        margin-top: 0rem;
+      }
+
+      .feature-buttons__img {
+        width: 80px;
       }
     }
 
@@ -278,7 +284,22 @@ a {
   }
 
   &__rotate-fix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: rotate(-45deg);
+
+    p {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      transition: font-size 0.3s, opacity 0.3s, margin-top 0.3s;
+    }
+
+    img {
+      width: 40px;
+      transition: width 0.3s;
+    }
   }
 
   &__footer {
@@ -291,7 +312,120 @@ a {
 // Booking section
 .booking {
   position: relative;
+  transform: translateY(-18%);
   @include overlappingBackground;
+  height: 650px;
+  flex-direction: column;
+  justify-content: start;
+  background-color: $secondary-light;
+
+  .particles-js-canvas-el {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__h2 {
+    margin: 12.5rem auto 1rem;
+    @include headersStyling;
+    max-width: 300px;
+  }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.288);
+    filter: blur(5px);
+  }
+
+  &__not-logged {
+    @include headersStyling;
+    font-size: 1.55rem;
+    margin: 0 auto;
+
+    a {
+      padding: 0.5rem;
+      @include underlineHover;
+
+      &::before,
+      &::after {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+
+  &__options-background {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 300px;
+    height: 300px;
+    margin: 2rem;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    border-radius: 12px;
+    background-color: $white;
+    font-size: 1.5rem;
+    transition: 0.3s, transform 0s;
+    cursor: pointer;
+
+    &:hover {
+      scale: 0.9;
+      box-shadow: 0px 0px 8px 3px black;
+      border: 1px solid $primary;
+      background-color: $secondary;
+      color: $white;
+
+      &::before,
+      &::after {
+        opacity: 1;
+        width: 105%;
+        height: 105%;
+      }
+    }
+
+    &::before {
+      border: 1px solid black;
+      left: 55%;
+      top: 55%;
+    }
+
+    &::after {
+      border: 1px solid white;
+      left: 45%;
+      top: 45%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      width: 0%;
+      height: 0%;
+      transition: width 0.3s, height 0.3s, opacity 0.3s;
+    }
+
+    img {
+      width: 80px;
+    }
+  }
 }
 
 // Display images section
@@ -318,9 +452,7 @@ a {
     top: 0;
     left: 0;
     border-radius: inherit;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include backgroundImage;
     filter: blur(3px);
   }
 

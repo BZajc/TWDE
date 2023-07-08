@@ -77,21 +77,6 @@
                 alt=""
               />
             </div>
-
-            <div class="header__button header__language-container">
-              <img
-                class="header__language-btn additional-icon language-icon"
-                src="./src/img/icons/language.svg"
-                alt=""
-              />
-            </div>
-
-            <p class="header__info-text">
-              <i class="fa-solid fa-up-long" style="color: #e5e5e5"></i>
-            </p>
-            <p class="header__info-text header__info-text--p">
-              You can change currency or website language by clicking here
-            </p>
           </div>
         </div>
       </div>
@@ -115,28 +100,60 @@
           <p class="feature-buttons__text feature-buttons__text--2"></p>
         </div>
         <div class="feature-buttons__container">
-          
           <!-- This div is for easier design -->
           <div class="feature-buttons__button hidden"></div>
 
           <div class="feature-buttons__button feature-buttons__last-minute">
-            <div class="feature-buttons__rotate-fix">LAST MINUTE</div>
+            <div class="feature-buttons__rotate-fix">
+              <p class="feature-buttons__p">LAST MINUTE</p>
+              <img class="feature-buttons__img" src="./src/img/icons/discounts.svg" alt="">
+            </div>
           </div>
           <div class="feature-buttons__button feature-buttons__all-inclusive">
-            <div class="feature-buttons__rotate-fix">ALL INCLUSIVE</div>
+            <div class="feature-buttons__rotate-fix"><p class="feature-buttons__p">ALL INCLUSIVE</p>
+              <img class="feature-buttons__img" src="./src/img/icons/all-inclusive.svg" alt="">
+            </div>
           </div>
           <div class="feature-buttons__button feature-buttons__reservation">
-            <div class="feature-buttons__rotate-fix">RESERVATION</div>
+            <div class="feature-buttons__rotate-fix"><p class="feature-buttons__p">RESERVATION</p>
+              <img class="feature-buttons__img" src="./src/img/icons/manage.svg" alt="">
+            </div>
           </div>
         </div>
         <div class="feature-buttons__footer">
-          <p>All special offers are delivered by It Doesn't Work Anyway ©</p>
+          <p class="feature-buttons__p">All special offers are delivered by It Doesn't Work Anyway ©</p>
         </div>
       </div>
     </section>
 
     <section class="booking">
-
+      <div id="particles-js">
+        <div class="booking__background"></div>
+        <h2 class="booking__h2">Book vacation</h2>
+        <div class="booking__not-logged">
+          <p>
+            Not logged yet? Click <strong><a href="#">here</a></strong>
+          </p>
+        </div>
+        <div class="booking__options-background">
+          <div class="booking__option">
+            <p>Offers for you</p>
+            <img src="./src/img/icons/for-you.svg" alt="" />
+          </div>
+          <div class="booking__option">
+            <p>Your discounts</p>
+            <img src="./src/img/icons/discounts.svg" alt="" />
+          </div>
+          <div class="booking__option">
+            <p>Manage bookings</p>
+            <img src="./src/img/icons/manage.svg" alt="" />
+          </div>
+          <div class="booking__option">
+            <p>Account panel</p>
+            <img src="./src/img/icons/account-panel.svg" alt="" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="display-images">
@@ -164,11 +181,16 @@
         </div>
       </div>
       <div class="display-images__delivered">
-        <p>Images delivered by Pixabay. Author: <span class="display-images__author"></span></p>
+        <p>
+          Images delivered by Pixabay. Author:
+          <span class="display-images__author"></span>
+        </p>
       </div>
     </section>
 
     <div style="height: 900px; width: 100%"></div>
+    <script src="./src/js/particlesjs/particles.js"></script>
+    <script src="./src/js/particlesjs/app.js"></script>
     <script type="module" src="./src/js/script.js"></script>
   </body>
 </html>
