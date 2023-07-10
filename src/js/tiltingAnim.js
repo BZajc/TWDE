@@ -1,5 +1,5 @@
-function booking() {
-    const options = document.querySelectorAll('.booking__option');
+function tiltingAnim(selector, maxRotate) {
+    const options = document.querySelectorAll(selector);
 
     // Animation responsible for tilting the div towards the mouse
     options.forEach(option => {
@@ -8,7 +8,7 @@ function booking() {
         const centerY = option.offsetHeight / 2;
         const mouseX = event.offsetX - centerX;
         const mouseY = event.offsetY - centerY;
-        const maxRotation = 20;
+        const maxRotation = maxRotate;
     
         const rotateX = -mouseY / centerY * maxRotation;
         const rotateY = mouseX / centerX * maxRotation;
@@ -22,4 +22,4 @@ function booking() {
     });
 }
 
-export default booking
+export default tiltingAnim
