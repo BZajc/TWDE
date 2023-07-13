@@ -243,14 +243,18 @@
       </div>
     </section>
 
+    <h1>Konwerter walut</h1>
+
     <select id="currencySelect">
+      <option class="actual-currency-option" value="Actual Currency" selected disabled>Actual Currency:</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
       <option value="PLN">PLN</option>
       <option value="EUR">EUR</option>
-      <option value="GBP">GBP</option>
     </select>
 
-    <div class="price" data-price="199" data-currency="PLN">199 <span></span></div>
-    <div class="price" data-price="259" data-currency="PLN">259 <span></span></div>
+    <p class="convertedAmount">100 PLN</p>
+    <p class="convertedAmount">500 PLN</p>
 
     <div style="height: 900px; width: 100%"></div>
     <script src="./src/js/particlesjs/particles.js"></script>

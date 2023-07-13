@@ -1,17 +1,17 @@
 import displayImagesSection from "./displayImages";
 import other from "./other";
 import tiltingAnim from "./tiltingAnim";
-import exchangeRateAPI from "./exchangeRateAPI";
+import exchangeRate from "./exchangeRate";
 
-// Running Pixabay API for display images section
+// Pixabay API for display images section
 displayImagesSection();
 
 // Other stuff (anchor to section etc.)
 other();
 
-// TEST
-exchangeRateAPI()
+// Currency Converter
+exchangeRate();
 
 // Running tilting animation
-tiltingAnim('.booking__option', 20);
-tiltingAnim('.offers__offer', 10);
+tiltingAnim(".booking__option", 20);
+tiltingAnim(".offers__offer", 10);
