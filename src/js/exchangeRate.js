@@ -29,7 +29,7 @@ function exchangeRate() {
         actualCurrencyOption.textContent = `Actual Currency: ${currencySelect.value}`
       })
     } catch(err) {
-      console.log("Wystąpił błąd podczas konwersji waluty:", err);
+      console.log("There was an error while converting currency:", err);
     }
   }
 
