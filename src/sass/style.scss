@@ -624,8 +624,7 @@ a {
     cursor: pointer;
     transition: box-shadow 0.3s;
     overflow: hidden;
-    background-color: white;
-    background-image: url("../img/offers/offers-background.svg");
+    background-color: white;;
 
     &:hover {
       box-shadow: 0px 0px 5px 1px rgb(53, 53, 53);
@@ -715,6 +714,7 @@ a {
       font-size: 1.2rem;
       color: $secondary;
       z-index: 1;
+      padding: 0.25rem;
 
       @include underlineHover;
       &::before,
