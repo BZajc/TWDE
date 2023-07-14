@@ -696,9 +696,25 @@ a {
     }
   }
 
-  &__opinion-counter {
-    margin-top: 3rem;
-    font-size: 0.8rem;
+  &__reviews-n-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  &__reviews {
+    font-size: 0.9rem;
+  }
+
+  &__price {
+    p {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+    p:nth-child(2) {
+      font-size: 1.4rem;
+    }
   }
 
   &__bottom-svg img {

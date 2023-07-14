@@ -10,11 +10,11 @@ displayImagesSection();
 // Other stuff (anchor to section etc.)
 other();
 
-// Currency Converter
-exchangeRate();
-
 // Running tilting animation
 tiltingAnim(".booking__option", 20);
 
 // Render cards in offers section
-renderOffers()
+renderOffers();
+
+// Currency Converter
+exchangeRate();

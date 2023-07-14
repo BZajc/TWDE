@@ -6,7 +6,6 @@ function other() {
   const ratingStarsBox = document.querySelector(".offers__rating");
   const ratingStars = document.querySelectorAll(".offers__rating img");
 
-
   // Smooth scrolling to booking section
   function scrollToBooking() {
     bookingSection.scrollIntoView({ behavior: "smooth" });
@@ -19,23 +18,42 @@ function other() {
   }
   offersButton.addEventListener("click", scrollToOffers);
 
+  // Animation for rating stars
   function jumpingStarsAnim() {
-    const animationDuration = 500; // Animation duration
-
-    ratingStarsBox.addEventListener("mouseover", () => {
+    const animationDuration = 500; // Animation last time
+  
+    function startAnimation() {
       ratingStars.forEach((star, index) => {
         const delay = index * 200;
         setTimeout(() => {
           star.classList.add("jump");
-
+  
           setTimeout(() => {
             star.classList.remove("jump");
           }, animationDuration);
         }, delay);
       });
-    });
+    }
+  
+    function startInterval() {
+      startAnimation(); // Running animation on start
+  
+      setInterval(() => {
+        startAnimation(); // Running animation every 5 seconds
+      }, 5000);
+    }
+  
+    function startCycle() {
+      startInterval();
+  
+      setInterval(() => {
+        startInterval(); // Running interval every 5 seconds
+      }, 10000);
+    }
+  
+    startCycle(); // Running animation cycle on start
   }
-
+  
   jumpingStarsAnim();
 }
 
