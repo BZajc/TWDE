@@ -50,21 +50,3 @@
     }
   }
 }
-
-@mixin jumpingStarsAnim {
-  animation-name: jumpingStarsAnim;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  @keyframes jumpingStarsAnim {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-}
