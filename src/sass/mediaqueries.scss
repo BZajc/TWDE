@@ -33,4 +33,20 @@
       margin-top: 75px;
     }
   }
+
+  .offers {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__offer {
+      width: 140px;
+    }
+
+    &__price {
+      a {
+        font-size: 1.1rem;
+      }
+    }
+  }
 }

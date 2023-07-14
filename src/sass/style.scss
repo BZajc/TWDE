@@ -623,7 +623,6 @@ a {
     transition: box-shadow 0.3s;
     overflow: hidden;
     background-color: white;
-    @include backgroundImage;
     background-image: url("../img/offers/offers-background.svg");
 
     &:hover {
@@ -635,12 +634,9 @@ a {
     font-size: 2rem;
   }
 
-  &__image {
+  &__image img {
     width: 100%;
     height: 100px;
-
-    @include backgroundImage;
-    background-image: url("../img/offers/vienna.jpg");
   }
 
   &__main-info {
@@ -665,6 +661,7 @@ a {
   &__additional-info {
     padding: 0.25rem;
     width: 100%;
+    z-index: 1;
 
     &-small-container {
       display: flex;
@@ -698,7 +695,6 @@ a {
 
   &__reviews-n-price {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin-top: 2rem;
   }
@@ -715,6 +711,19 @@ a {
     p:nth-child(2) {
       font-size: 1.4rem;
     }
+    a {
+      display: block;
+      position: relative;
+      font-size: 1.2rem;
+      color: $secondary;
+      z-index: 1;
+
+      @include underlineHover;
+      &::before,
+      &::after {
+        border-bottom: 2px solid $secondary;
+      }
+    }
   }
 
   &__bottom-svg img {
@@ -724,5 +733,46 @@ a {
     transform: translateX(-50%);
     height: 50px;
     width: 100%;
+  }
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: rgba(255, 255, 255, 0.719);
+  z-index: -100;
+  opacity: 0;
+  transition: opacity 0.3s, z-index 0.3s;
+
+  &__btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 3px solid $secondary-light;
+    cursor: pointer;
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.1s;
+
+    &:hover {
+      background-color: $secondary-light;
+      border: 3px solid $primary;
+      box-shadow: 0px 0px 5px 1px black;
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 45px;
+    }
   }
 }
