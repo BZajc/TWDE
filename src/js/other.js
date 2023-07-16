@@ -25,9 +25,9 @@ function other() {
   });
 
   // Display nav for mobile view
-  const headerCurrencyRect = headerCurrency.getBoundingClientRect();
   window.addEventListener("scroll", function () {
     // Get bottom border of the element
+    const headerCurrencyRect = headerCurrency.getBoundingClientRect();
 
     if (headerCurrencyRect.bottom < 0) {
       nav.style.zIndex = "100";
@@ -55,13 +55,6 @@ function other() {
   window.addEventListener("hashchange", () => {
     if (currencyForm.classList.contains("show-currency-form")) {
       currencyForm.classList.remove("show-currency-form");
-    }
-    if (headerCurrencyRect.bottom < 0) {
-      nav.style.zIndex = "100";
-      nav.style.opacity = "1";
-    } else {
-      nav.style.zIndex = "-100";
-      nav.style.opacity = "0";
     }
   });
 
