@@ -624,7 +624,7 @@ a {
     cursor: pointer;
     transition: box-shadow 0.3s;
     overflow: hidden;
-    background-color: white;;
+    background-color: white;
 
     &:hover {
       box-shadow: 0px 0px 5px 1px rgb(53, 53, 53);
@@ -701,6 +701,7 @@ a {
   }
 
   &__price {
+    white-space: nowrap;
     p {
       text-align: right;
       font-size: 0.9rem;
@@ -772,5 +773,139 @@ a {
       transform: translate(-50%, -50%);
       width: 45px;
     }
+  }
+
+  .currency-btn {
+    &:hover {
+      box-shadow: 0px 0px 5px 1px gold;
+      border: 3px solid gold;
+    }
+  }
+}
+
+.nav-display-form {
+  z-index: 100 !important;
+  opacity: 1 !important;
+}
+
+// Change currency form
+.currency-form {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  z-index: 99;
+}
+
+.show-currency-form {
+  display: block;
+}
+
+// Contact
+.contact {
+  flex-direction: column;
+  transform: translateY(-60%);
+  @include overlappingBackground;
+  justify-content: start;
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include backgroundImage;
+    background-image: url("../img/contact-low.jpg");
+    z-index: -10;
+  }
+
+  &__filter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9;
+    background-color: #2e2828bf
+  }
+
+  &__h2 {
+    @include headersStyling;
+    background-color: $white;
+    color: $primary;
+    margin-top: 3rem;
+  }
+
+  &__24 {
+    color: $white;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    margin-top: 3rem;
+  }
+
+  &__info {
+    color: $white;
+    width: 60%;
+    word-spacing: 0.25rem;
+
+    a {
+      @include underlineHover;
+    }
+
+    p,
+    a {
+      padding: 1rem;
+    }
+  }
+
+  &__bubbles {
+    width: 40%;
+  }
+
+  &__bubble {
+    display: flex;
+    flex-direction: column;
+    width: 75px;
+    height: 75px;
+
+    img {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    p,
+    a {
+      display: block;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  &__bottom-info {
+    color: $white;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .xd {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 40px;
+    font-size: 2rem;
+    text-align: center;
+    background-color: red;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }

@@ -75,7 +75,7 @@
                 alt=""
               />
             </div>
-            <div class="header__button currency-btn">
+            <div class="header__button currency-btn header-currency">
               Currency: €
               <img
                 class="header__language-btn additional-icon"
@@ -227,6 +227,7 @@
                   alt="Vienna city streets"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Vienna, Austria</div>
                 <div class="offers__rating">
@@ -283,6 +284,7 @@
                   alt="Grove Street - Home."
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Grove Street, Los Santos</div>
                 <div class="offers__rating">
@@ -343,6 +345,7 @@
                   alt="Houses in Santorini with the sea in the background"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Santorini, Greece</div>
                 <div class="offers__rating">
@@ -395,6 +398,7 @@
                   alt="Waterfront in Bydgoszcz"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Bydgoszcz, Poland</div>
                 <div class="offers__rating">
@@ -452,6 +456,7 @@
                   alt="The Ritz London entrance"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">London, UK</div>
                 <div class="offers__rating">
@@ -508,6 +513,7 @@
                   alt="La Mamounia hotel entrance"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Marrakech, Maroko</div>
                 <div class="offers__rating">
@@ -564,6 +570,7 @@
                   alt="The Mark hotel entrance"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">New York, USA</div>
                 <div class="offers__rating">
@@ -620,6 +627,7 @@
                   alt="Belmond Hotel Splendido entrance"
                 />
               </div>
+              <div class="offers__background"></div>
               <div class="offers__main-info">
                 <div class="offers__destination">Portofino, Italy</div>
                 <div class="offers__rating">
@@ -672,42 +680,118 @@
         </div>
       </div>
     </section>
+
     <nav class="nav">
-      <div class="nav__book-a-flight-btn nav__btn">
+      <div class="nav__btn booking-btn">
         <img src="./src/img/icons/schedule.svg" alt="" />
       </div>
-      <div class="nav__check-profile-btn nav__btn">
+      <div class="sign-btn nav__btn">
         <img src="./src/img/icons/account.svg" alt="" />
       </div>
-      <div class="nav__check-offers-btn nav__btn">
+      <div class="offers-btn nav__btn">
         <img src="./src/img/icons/offers.svg" alt="" />
       </div>
-      <div class="nav__change-currency-btn nav__btn">
+      <div class="currency-btn nav__btn">
         <img src="./src/img/icons/currency.svg" alt="" />
       </div>
     </nav>
 
-    <h1>Konwerter walut</h1>
+    <form class="currency-form">
+      <label for="currencySelect">Zmień walutę:</label>
+      <select id="currencySelect">
+        <option
+          class="actual-currency-option"
+          value="Actual Currency"
+          selected
+          disabled
+        >
+          Actual Currency:
+        </option>
+        <option value="USD">USD</option>
+        <option value="GBP">GBP</option>
+        <option value="PLN">PLN</option>
+        <option value="EUR">EUR</option>
+      </select>
+    </form>
 
-    <select id="currencySelect">
-      <option
-        class="actual-currency-option"
-        value="Actual Currency"
-        selected
-        disabled
-      >
-        Actual Currency:
-      </option>
-      <option value="USD">USD</option>
-      <option value="GBP">GBP</option>
-      <option value="PLN">PLN</option>
-      <option value="EUR">EUR</option>
-    </select>
+    <section class="contact">
+      <div class="contact__background"></div>
+      <div class="contact__filter"></div>
+      <h2 class="contact__h2">Contact</h2>
+      <p class="contact__24">Our hotline and live chat are open 24/7</p>
+      <div class="contact__container">
+        <!-- <div class="contact__info contact__info--email">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            commodi praesentium maiores optio ratione corrupti doloribus
+            sapiente quae temporibus magnam.
+          </p>
+          <p>Lorem, ipsum dolor.</p>
+          <a href="mailto:twde@dontwrite.com">twde@dontwrite.com</a>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+            alias?
+          </p>
+        </div> -->
+        <!-- <div class="contact__info contact__info--number">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <a href="tel:+213755555">Call us</a>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis vitae
+            neque natus consequatur qui asperiores voluptas dolore velit vel.
+          </p>
+        </div> -->
+        <div class="contact__info contact__info--live">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint animi
+            deleniti fugit accusamus laborum quae ex quam possimus harum natus
+            numquam sunt, et repellendus nisi! Alias reprehenderit quibusdam
+            modi voluptates numquam perspiciatis earum aliquam deleniti natus?
+          </p>
+          <a href="https://i.giphy.com/media/A67Dw0Pzw6zdnGqfrM/giphy.webp"
+            >Connect with our support</a
+          >
+        </div>
+        <div class="contact__bubbles">
+          <div class="contact__bubble contact__bubble--email">
+            <div class="contact__icon">
+              <a href="mailto:twde@dontwrite.com">
+                <img src="./src/img/icons/email.svg" alt="email icon" />
+                Email
+              </a>
+            </div>
+          </div>
+          <div class="contact__bubble contact__bubble--number">
+            <div class="contact__icon">
+              <a href="tel:+213755555"
+                ><img
+                  src="./src/img/icons/call-center.svg"
+                  alt="telephone icon"
+                />Call us</a
+              >
+            </div>
+          </div>
+          <div class="contact__bubble contact__bubble--live">
+            <div class="contact__icon">
+              <a href="https://i.giphy.com/media/A67Dw0Pzw6zdnGqfrM/giphy.webp">
+                <img
+                  src="./src/img/icons/live-chat.svg"
+                  alt="chat bubble icon"
+                />
+                Live chat
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact__bottom-info">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, pariatur perferendis? Saepe recusandae animi vero.</p>
+      </div>
+      <div class="xd">
+        <p>SECTION NOT DONE YET</p>
+      </div>
+    </section>
 
-    <p class="convertedAmount" data-type="price" data-value="100">100 PLN</p>
-    <p class="convertedAmount" data-type="price" data-value="500">500 PLN</p>
-
-    <div style="height: 900px; width: 100%"></div>
     <script src="./src/js/particlesjs/particles.js"></script>
     <script src="./src/js/particlesjs/app.js"></script>
     <script type="module" src="./src/js/script.js"></script>
