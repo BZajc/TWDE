@@ -44,7 +44,18 @@ function other() {
       currencyForm.classList.contains("show-currency-form")
         ? nav.classList.add("nav-display-form")
         : nav.classList.remove("nav-display-form");
+  
+      // Dodawanie identyfikatora URL po kliknięciu w przycisk "currencyBtn"
+      const newURL = "#currency-form"; // Twój identyfikator URL
+      history.pushState(null, "", newURL);
     });
+  });
+  
+  // Obsługa zdarzenia "hashchange" dla przycisku "Cofnij" na telefonach
+  window.addEventListener("hashchange", () => {
+    if (currencyForm.classList.contains("show-currency-form")) {
+      currencyForm.classList.remove("show-currency-form");
+    }
   });
 
 }
