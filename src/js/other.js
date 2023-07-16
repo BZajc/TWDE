@@ -25,9 +25,9 @@ function other() {
   });
 
   // Display nav for mobile view
+  const headerCurrencyRect = headerCurrency.getBoundingClientRect();
   window.addEventListener("scroll", function () {
     // Get bottom border of the element
-    const headerCurrencyRect = headerCurrency.getBoundingClientRect();
 
     if (headerCurrencyRect.bottom < 0) {
       nav.style.zIndex = "100";
@@ -45,16 +45,23 @@ function other() {
         ? nav.classList.add("nav-display-form")
         : nav.classList.remove("nav-display-form");
   
-      // Dodawanie identyfikatora URL po kliknięciu w przycisk "currencyBtn"
-      const newURL = "#currency-form"; // Twój identyfikator URL
+      // Adding ID URL after showing currency form
+      const newURL = "#currency-form"; // ID URL
       history.pushState(null, "", newURL);
     });
   });
   
-  // Obsługa zdarzenia "hashchange" dla przycisku "Cofnij" na telefonach
+  // Handling haschange to hide currency form instead of leaving the page
   window.addEventListener("hashchange", () => {
     if (currencyForm.classList.contains("show-currency-form")) {
       currencyForm.classList.remove("show-currency-form");
+    }
+    if (headerCurrencyRect.bottom < 0) {
+      nav.style.zIndex = "100";
+      nav.style.opacity = "1";
+    } else {
+      nav.style.zIndex = "-100";
+      nav.style.opacity = "0";
     }
   });
 
