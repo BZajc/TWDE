@@ -14,3 +14,4 @@ tiltingAnim(".booking__option", 20);
 
 // Currency Converter
 exchangeRate();
+

@@ -829,7 +829,7 @@ a {
     width: 100%;
     height: 100%;
     z-index: -9;
-    background-color: #2e2828bf
+    background-color: #2e2828bf;
   }
 
   &__h2 {
@@ -847,16 +847,55 @@ a {
 
   &__container {
     position: relative;
+    justify-content: space-between;
     display: flex;
     margin-top: 3rem;
   }
 
+  &__info-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__icon-box {
+    margin-right: 3rem;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &__dot {
+    margin: 1rem;
+    width: 30px;
+    height: 30px;
+    background-color: $white;
+    border-radius: 50%;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $secondary-light;
+    }
+  }
+
   &__info {
+    display: none;
+    margin: auto 0;
     color: $white;
-    width: 60%;
+    width: 80%;
     word-spacing: 0.25rem;
+    text-align: center;
 
     a {
+      color: #6088dad7;
+      font-size: 1.3rem;
+      text-align: center;
       @include underlineHover;
     }
 
@@ -866,12 +905,27 @@ a {
     }
   }
 
+  .visible {
+    display: block;
+    transition: opacity 0.5s;
+  }
+
+  .active {
+    background-color: #6088dad7;
+
+    &:hover {
+      background-color: $secondary-light;
+    }
+  }
+
   &__bubbles {
     width: 40%;
   }
 
   &__bubble {
+    position: relative;
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     width: 75px;
     height: 75px;
@@ -889,23 +943,35 @@ a {
       text-align: center;
       color: $white;
     }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0;
+      left: 0;
+      transition: 0.3s;
+      border-left: 3px solid $white;
+    }
+
+    &::before {
+      top: 50%;
+    }
+
+    &::after {
+      bottom: 50%;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      height: 50%;
+      border-left: 3px solid $secondary;
+    }
   }
 
   &__bottom-info {
     color: $white;
     text-align: center;
     margin-top: 3rem;
-  }
-
-  .xd {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 300%;
-    height: 40px;
-    font-size: 2rem;
-    text-align: center;
-    background-color: red;
-    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
