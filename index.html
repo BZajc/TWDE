@@ -696,23 +696,25 @@
       </div>
     </nav>
 
-    <form class="currency-form">
-      <label for="currencySelect">Zmień walutę:</label>
-      <select id="currencySelect">
-        <option
-          class="actual-currency-option"
-          value="Actual Currency"
-          selected
-          disabled
-        >
-          Actual Currency:
-        </option>
-        <option value="USD">USD</option>
-        <option value="GBP">GBP</option>
-        <option value="PLN">PLN</option>
-        <option value="EUR">EUR</option>
-      </select>
-    </form>
+    <div class="currency-prompt">
+      <div class="currency-prompt__container">
+        <div class="currency-prompt__background">
+          <div class="currency-prompt__heading">
+            <h3>Change currency</h3>
+          </div>
+          <div class="currency-prompt__change-currency">
+            <div class="currency-prompt__new-currency" value="GBP">GBP (£)</div>
+            <div class="currency-prompt__new-currency" value="USD">USD ($)</div>
+            <div class="currency-prompt__new-currency" value="PLN">PLN (zł)</div>
+            <div class="currency-prompt__new-currency" value="EUR">EUR (€)</div>
+          </div>
+          <div class="currency-prompt__api">
+            Currency conversion API integrated via
+            <a href="https://app.exchangerate-api.com/">ExchangeRate-API</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="contact">
       <div class="contact__background"></div>
@@ -805,6 +807,32 @@
       </div>
     </section>
 
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__links">
+          <a href="#">Home</a>
+          <a href="#">Travel offers</a>
+          <a href="#">About us</a>
+          <a href="#">Travel Blog</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Booking Policies</a>
+          <a href="#">Site Map</a>
+        </div>
+        <div class="footer__logo-box">
+          <div class="footer__logo">
+            <img src="./src/img/logo.png" alt="Logo of the company" />
+          </div>
+          <div class="footer__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ipsa
+            neque deserunt recusandae esse labore!
+          </div>
+        </div>
+        <div class="footer__copyright">
+          © 2023 This Website Doesn't Exist. All rights reserved.
+        </div>
+      </div>
+    </footer>
     <script src="./src/js/particlesjs/particles.js"></script>
     <script src="./src/js/particlesjs/app.js"></script>
     <script type="module" src="./src/js/script.js"></script>

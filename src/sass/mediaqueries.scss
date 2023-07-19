@@ -35,6 +35,8 @@
   }
 
   .offers {
+    height: 950px;
+
     &__list {
       grid-template-columns: repeat(4, 1fr);
     }

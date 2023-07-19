@@ -6,8 +6,7 @@ function other() {
   const currencyBtn = document.querySelectorAll(".currency-btn");
   const headerCurrency = document.querySelector(".header-currency");
   const nav = document.querySelector(".nav");
-  const currencyForm = document.querySelector(".currency-form");
-  const contactInfo = document.querySelectorAll(".contact__info")
+  const currencyPrompt = document.querySelector(".currency-prompt");
 
   // Smooth scrolling to booking section
   function scrollToBooking() {
@@ -42,8 +41,8 @@ function other() {
   // Show change currency form on click
   currencyBtn.forEach((el) => {
     el.addEventListener("click", () => {
-      currencyForm.classList.toggle("show-currency-form");
-      currencyForm.classList.contains("show-currency-form")
+      currencyPrompt.classList.toggle("show-currency-prompt");
+      currencyPrompt.classList.contains("show-currency-prompt")
         ? nav.classList.add("nav-display-form")
         : nav.classList.remove("nav-display-form");
   
@@ -55,8 +54,8 @@ function other() {
   
   // Handling hashchange to hide currency form instead of leaving the page
   window.addEventListener("hashchange", () => {
-    if (currencyForm.classList.contains("show-currency-form")) {
-      currencyForm.classList.remove("show-currency-form");
+    if (currencyPrompt.classList.contains("show-currency-prompt")) {
+      currencyPrompt.classList.remove("show-currency-prompt");
     }
   });
 
